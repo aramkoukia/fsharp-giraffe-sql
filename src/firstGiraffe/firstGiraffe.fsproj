@@ -14,11 +14,12 @@
     <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.0.*" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="2.0.*" />
     <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.0.*" />
-    <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration" Version="2.0.*"/>
+    <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration" Version="2.0.*" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="2.0.*" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="2.0.*" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.*" />
     <PackageReference Include="Giraffe" Version="1.1.*" />
+    <PackageReference Include="SQLProvider" Version="1.1.49" />
   </ItemGroup>
 
   <ItemGroup>

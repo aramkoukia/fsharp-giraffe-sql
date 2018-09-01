@@ -14,3 +14,20 @@ module HttpHandlers =
                 }
                 return! json response next ctx
             }
+
+    let handleGetBrands =
+        fun (next : HttpFunc) (ctx : HttpContext) ->
+            task {
+                return! json getBrands
+            }
+
+    fun (next : HttpFunc) (ctx : HttpContext) ->
+        task {
+            let userManager = ctx.GetService<UserManager<IdentityUser>>()
+            let! user = userManager.GetUserAsync ctx.User
+            return! (user |> userPage |> htmlView) next ctx
+        }        
+
+    let getBrands = {
+        Brand
+    }
