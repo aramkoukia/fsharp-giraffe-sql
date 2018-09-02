@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "firstGiraffe", "firstGiraffe.fsproj", "{980E2995-D60A-4032-A6D6-6974E1E4EEFB}"
 EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "firstGiraffe.Tests", "..\..\tests\firstGiraffe.Tests\firstGiraffe.Tests.fsproj", "{0B2363FF-F0AE-494B-B349-987164136150}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{980E2995-D60A-4032-A6D6-6974E1E4EEFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{980E2995-D60A-4032-A6D6-6974E1E4EEFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{980E2995-D60A-4032-A6D6-6974E1E4EEFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B2363FF-F0AE-494B-B349-987164136150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B2363FF-F0AE-494B-B349-987164136150}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B2363FF-F0AE-494B-B349-987164136150}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B2363FF-F0AE-494B-B349-987164136150}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

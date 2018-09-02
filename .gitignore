@@ -2,7 +2,7 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/src/firstGiraffe/bin
-/src/firstGiraffe/obj
-/src/firstGiraffe/.vs
+bin
+.vs
 /src/firstGiraffe/Properties/PublishProfiles
+obj

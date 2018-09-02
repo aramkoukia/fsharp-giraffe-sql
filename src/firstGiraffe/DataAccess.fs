@@ -1,12 +1,14 @@
+module DataAccess
+
 open FSharp.Data.Sql
 
-let ctx = Sql.GetDataContext()
+// let ctx = Sql.GetDataContext()
 
 // To use dynamic runtime connectionString, you could use:
 // let ctx = sql.GetDataContext connectionString2
 
 // pick individual entities from the database 
-let Brands = ctx.Main.Brands |> Seq.toArray
+// let Brands = ctx.Main.Brands |> Seq.toArray
 
 // directly enumerate an entity's relationships, 
 // this creates and triggers the relevant query in the background
