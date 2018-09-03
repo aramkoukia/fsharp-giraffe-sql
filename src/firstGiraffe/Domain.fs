@@ -1,13 +1,16 @@
-namespace Domain
+module Domain
 
 open System
 open FSharp.Data.Sql
 
 [<CLIMutable>]
+type Message = {
+        Text : string }
+
+[<CLIMutable>]
 type BrandDto = {
     Id: Guid
-    Name: string
-}
+    Name: string }
 
 let [<Literal>] ConnectionString = "Server=localhost;Database=hub;integrated security=true;"
 
@@ -18,9 +21,9 @@ type Sql = SqlDataProvider<
               UseOptionTypes = true >
 
 
-    let CreateBrand brand = {
+    let createBrand brand = {
+    
         let ctx = Sql.GetDataContext()
-        ctx.Dbo.Brand.Create(brand)
-
+        ctx.Dbo.Brand.Create()
         ctx.SubmitUpdates()
-}
+    }

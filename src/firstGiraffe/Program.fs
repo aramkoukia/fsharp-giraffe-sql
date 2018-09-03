@@ -8,6 +8,7 @@ open Microsoft.Extensions.Logging
 open Microsoft.Extensions.DependencyInjection
 open Giraffe
 open firstGiraffe.HttpHandlers
+open Domain
 
 // ---------------------------------
 // Web app
