@@ -21,9 +21,8 @@ type Sql = SqlDataProvider<
               UseOptionTypes = true >
 
 
-    let createBrand brand = {
-    
-        let ctx = Sql.GetDataContext()
-        ctx.Dbo.Brand.Create()
-        ctx.SubmitUpdates()
-    }
+let createBrand _brand = 
+    let ctx = Sql.GetDataContext()
+    ctx.Dbo.Brand.``Create(BrandId, CreatedByUserId, CreatedDate, EffectiveDate, IsSystemBrand, ThemeId, UserProfileId)``
+    ctx.SubmitUpdates()
+
