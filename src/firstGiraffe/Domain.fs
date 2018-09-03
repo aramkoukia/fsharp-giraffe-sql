@@ -1,9 +1,10 @@
-module Brands
+namespace Domain
 
 open System
 open FSharp.Data.Sql
 
-type Brand = {
+[<CLIMutable>]
+type BrandDto = {
     Id: Guid
     Name: string
 }

@@ -4,7 +4,7 @@ module HttpHandlers =
 
     open Microsoft.AspNetCore.Http
     open Giraffe
-    open firstGiraffe.Models
+    open Domain
 
     let handleGetHello =
         fun (next : HttpFunc) (ctx : HttpContext) ->
@@ -15,8 +15,17 @@ module HttpHandlers =
                 return! json response next ctx
             }
 
-    let handleGetBrands =
+    let postBrandHandler : HttpHandler =
         fun (next : HttpFunc) (ctx : HttpContext) ->
             task {
-                return! json getBrands
+                let! brand       = ctx.BindFormAsync<BrandDto>()
+                // let  userManager = ctx.GetService<UserManager<IdentityUser>>()
+                let! result      = createBrandAsync(brand)
+
+                match result.Succeeded with
+                | false -> return! showErrors result.Errors next ctx
+                | true  ->
+                    let signInManager = ctx.GetService<SignInManager<IdentityUser>>()
+                    do! signInManager.SignInAsync(user, true)
+                    return! redirectTo false "/user" next ctx
             }
