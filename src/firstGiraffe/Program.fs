@@ -22,7 +22,9 @@ let webApp =
                     route "/hello" >=> handleGetHello
                 ]
                 POST >=> choose [
-                    route "/brands" >=> handlePostBrand
+                    route "/brands" >=> handlePostBrands
+                    route "/brand" >=> handlePostBrand
+                    
                 ]
             ])
         setStatusCode 404 >=> text "Not Found" ]

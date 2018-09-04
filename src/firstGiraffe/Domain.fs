@@ -10,8 +10,12 @@ type Message = {
 
 [<CLIMutable>]
 type BrandDto = {
-    Id: Guid
+    Id: string
     Name: string }
+
+[<CLIMutable>]
+type Brand = {
+    Test: string }
 
 let [<Literal>] ConnectionString = "Server=localhost;Database=hub;integrated security=true;"
 
