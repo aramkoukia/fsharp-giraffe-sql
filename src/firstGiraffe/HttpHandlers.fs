@@ -20,7 +20,12 @@ module HttpHandlers =
             task {
                 let! brand       = ctx.BindFormAsync<BrandDto>()
                 // let  userManager = ctx.GetService<UserManager<IdentityUser>>()
-                createBrand(brand)
+                createBrand(brand) |> ignore
 
-                return! json brand next ctx
+                let response = {
+                    Text = "Brand Created!"
+                }
+                return! json response next ctx
+
+
             }

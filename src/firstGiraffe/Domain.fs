@@ -1,7 +1,8 @@
 module Domain
 
 open System
-open FSharp.Data.Sql
+//open FSharp.Data.SqlClient
+//open FSharp.Data
 
 [<CLIMutable>]
 type Message = {
@@ -14,15 +15,13 @@ type BrandDto = {
 
 let [<Literal>] ConnectionString = "Server=localhost;Database=hub;integrated security=true;"
 
-type Sql = SqlDataProvider< 
-              ConnectionString = ConnectionString,
-              DatabaseVendor = Common.DatabaseProviderTypes.MSSQLSERVER,
-              IndividualsAmount = 1000,
-              UseOptionTypes = true >
 
+let createBrand brand =
+    brand
+    //do
+    //use cmd = new SqlCommandProvider<"
+    //INSERT INTO Brand (BrandId, BrandName)
+    //Values(@brandId, @brandName )" 
+    //, ConnectionString>(ConnectionString)
 
-let createBrand _brand = 
-    let ctx = Sql.GetDataContext()
-    ctx.Dbo.Brand.``Create(BrandId, CreatedByUserId, CreatedDate, EffectiveDate, IsSystemBrand, ThemeId, UserProfileId)``
-    ctx.SubmitUpdates()
-
+    //cmd.Execute(brandId = brand.BrandId, brandName = brand.BrandName)
